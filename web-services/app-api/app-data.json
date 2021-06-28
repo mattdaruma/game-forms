@@ -1,0 +1,43 @@
+{
+  "queue": {
+    "queue-4eptbxokqenwomk": {
+      "id": "queue-4eptbxokqenwomk",
+      "name": "First Queue",
+      "description": "First Queue Desc",
+      "roles": ["MANAGER"],
+      "icon": null,
+      "color": null,
+      "workIds": ["work-4ept8akkqf0p2qi"]
+    }
+  },
+  "form": {
+    "form-4ept8akkqf0p2qh": {
+      "id": "form-4ept8akkqf0p2qh",
+      "name": "First Form",
+      "description": "First Form Desc",
+      "fieldIds": ["field-4ept1m4kqfwyjyy"],
+      "mutation": null
+    }
+  },
+  "work": {
+    "work-4ept8akkqf0p2qi": {
+      "id": "work-4ept8akkqf0p2qi",
+      "queueId": "queue-4eptbxokqenwomk",
+      "formId": "form-4ept8akkqf0p2qh",
+      "workData": [],
+      "listData": [],
+      "auditLogs": null
+    }
+  },
+  "field": {
+    "field-4ept1m4kqfwyjyy": {
+      "name": "first field",
+      "icon": null,
+      "color": null,
+      "hint": "test hint",
+      "required": false,
+      "disabled": false,
+      "type": "text"
+    }
+  }
+}

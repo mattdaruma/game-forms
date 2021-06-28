@@ -1,0 +1,4 @@
+{
+    "jwtHeader": "game-forms-jwt",
+    "jwtSecret": "itsasecretokay?"
+}

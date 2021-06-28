@@ -1,0 +1,7 @@
+{
+    "gamepad": {
+        "buttons": ["CONFIRM", "CANCEL", "NAV", "MENU", null, null, null, null, "NAV", "MENU", null, null, "UP", "DOWN", "LEFT", "RIGHT", null],
+        "directions": ["UP", "RIGHT", "DOWN", "LEFT"],
+        "altDirections": ["UP", "RIGHT", "DOWN", "LEFT"]
+    }
+}
