@@ -1,0 +1,12 @@
+schema: ./schema.graphql
+documents: ./src/**/*.graphql
+generates:
+  src/app/generated-types.ts:
+    config:
+      withHooks: true
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-apollo-angular
+      - add: 
+          content: '/* GENERATED WITH @graphql-codegen/cli */'

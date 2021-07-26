@@ -1,0 +1,177 @@
+directive @cacheControl(maxAge: Int, scope: CacheControlScope) on FIELD_DEFINITION | OBJECT | INTERFACE
+
+type AdminRole {
+  adminRoleId: ID!
+  role: String!
+  createdDate: Int!
+  createdByUserId: ID
+  archive: Boolean
+  archiveDate: Int
+  archiveByUserId: ID
+}
+
+enum CacheControlScope {
+  PUBLIC
+  PRIVATE
+}
+
+type FieldTemplate {
+  fieldTemplateId: ID!
+  name: String!
+  label: String!
+  type: FieldType!
+  icon: String
+  color: String
+  hint: String
+  disabled: Boolean
+  required: Boolean
+  requiredTrue: Boolean
+  max: Int
+  maxLength: Int
+  min: Int
+  minLength: Int
+  pattern: String
+  createdDate: Int!
+  createdByUserId: ID
+  archive: Boolean
+  archiveDate: Int
+  archiveByUserId: ID
+}
+
+enum FieldType {
+  COLOR
+  DATE
+  DATETIME
+  EMAIL
+  MONTH
+  NUMBER
+  PASSWORD
+  TEL
+  TEXT
+  TIME
+  URL
+  WEEK
+  TEXTAREA
+  KEYVALUESELECT
+}
+
+type FormTemplate {
+  formTemplateId: ID!
+  name: String!
+  description: String
+  color: String
+  icon: String
+  fieldIds: [ID]
+  mutation: String
+  createdDate: Int!
+  createdByUserId: ID
+  archive: Boolean
+  archiveDate: Int
+  archiveByUserId: ID
+}
+
+type Mutation {
+  createForm(queueId: ID, name: String, description: String, mutation: String): String
+}
+
+type Query {
+  AmAdmin: Boolean
+  AmQueueWorker(queueId: ID!): Boolean
+  AmQueueManager(queueId: ID!): Boolean
+  MyUser: User
+  AdminRole(adminRoleId: ID!): AdminRole
+  AdminRoles: [AdminRole]
+  FieldTemplate(fieldTemplateId: String!): FieldTemplate
+  FieldTemplates: [FieldTemplate]
+  FieldTemplatesInFormTemplate(formTemplateId: ID!): [FieldTemplate]
+  FormTemplate(formTemplateId: String!): FormTemplate
+  FormTemplates: [FormTemplate]
+  Queue(queueId: ID!): Queue
+  Queues(workManage: WorkManage): [Queue]
+  User(userId: ID!): User
+  Users: User
+  Work(workId: ID!): Work
+  Works(queueId: ID): [Work]
+  WorkDataList(workId: ID!, fieldTemplateId: ID!): [WorkDataList]
+  WorkDataLists(workId: ID!): [WorkDataList]
+  WorkDataValue(workId: ID!, fieldTemplateId: ID!): WorkDataValue
+  WorkDataValues(workId: ID!): [WorkDataValue]
+}
+
+type Queue {
+  queueId: ID!
+  name: String!
+  description: String!
+  icon: String
+  color: String
+  createdDate: Int!
+  createdByUserId: ID
+  archive: Boolean
+  archiveDate: Int
+  archiveByUserId: ID
+}
+
+enum Role {
+  CUSTOMERDATAACCESS
+  EMPLOYEEDATAACCESS
+}
+
+type Subscription {
+  commentAdded(repoFullName: String!): String
+}
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
+
+type User {
+  userId: ID!
+  identity: String!
+  display: String!
+  createdDate: Int!
+  createdByUserId: ID
+  archive: Boolean
+  archiveDate: Int
+  archiveByUserId: ID
+}
+
+type Work {
+  workId: ID!
+  formTemplateId: ID!
+  complete: Boolean
+  createdDate: Int!
+  createdByUserId: ID
+  archive: Boolean
+  archiveDate: Int
+  archiveByUserId: ID
+}
+
+type WorkDataList {
+  workDataListId: ID!
+  workId: ID!
+  fieldTemplateId: ID!
+  key: String
+  value: String
+  createdDate: Int!
+  createdByUserId: ID
+  archive: Boolean
+  archiveDate: Int
+  archiveByUserId: ID
+}
+
+type WorkDataValue {
+  id: ID!
+  workId: ID!
+  fieldTemplateId: ID!
+  key: String
+  value: String
+  createdDate: Int!
+  createdByUserId: ID
+  archive: Boolean
+  archiveDate: Int
+  archiveByUserId: ID
+}
+
+enum WorkManage {
+  WORK
+  MANAGE
+}

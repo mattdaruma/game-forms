@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/app/_services/api/api.service';
+import { map } from 'rxjs/operators';
+import { ToolbarUserGQL } from 'src/app/generated-types';
 
 @Component({
   selector: 'app-toolbar',
@@ -7,7 +8,9 @@ import { ApiService } from 'src/app/_services/api/api.service';
   styleUrls: ['./toolbar.component.scss']
 })
 export class ToolbarComponent {
-
-  constructor(public api: ApiService) { }
-
+  constructor(myUserQuery: ToolbarUserGQL) { 
+    myUserQuery.fetch().pipe(map(result => result.data)).subscribe(myUser => {
+      console.warn('toolbar user', myUser)
+    })
+  }
 }

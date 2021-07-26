@@ -1,6 +1,0 @@
-type Query{
-    Invoice(id: String): Invoice
-}
-type Invoice{
-    id: String
-}

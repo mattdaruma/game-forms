@@ -1,16 +1,17 @@
 
   <mat-toolbar color="primary">
-    <button *ngIf="(api.connectionStatus | async)! == 0" mat-button><mat-icon>block</mat-icon> Disconnected</button>
+    <!-- <button *ngIf="(api.connectionStatus | async)! == 0" mat-button><mat-icon>block</mat-icon> Disconnected</button>
     <button *ngIf="(api.connectionStatus | async)! == 1" mat-button><mat-icon>private_connectivity</mat-icon> Connecting...</button>
     <button *ngIf="(api.connectionStatus | async)! > 2" mat-button><mat-icon>error</mat-icon> Connection Error {{(api.connectionStatus | async) == 3 ? 'Identity' : 'API'}}</button>
-    <button *ngIf="(api.connectionStatus | async)! == 2" mat-button><mat-icon color="accent">star</mat-icon>0</button>
+    <button [routerLink]="['/']" *ngIf="(api.connectionStatus | async)! == 2" mat-button><mat-icon color="accent">star</mat-icon>0</button> -->
     <span style="flex: 1 1 auto;"></span>
     <button mat-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon>Menu</button>
     <mat-menu #menu="matMenu">
-        <button [routerLink]="['w']" mat-menu-item><mat-icon color="primary">assignment</mat-icon>Work</button>
-        <button [routerLink]="['q']" mat-menu-item><mat-icon color="primary">format_list_numbered</mat-icon>Queue</button>
-        <button [routerLink]="['c']" mat-menu-item><mat-icon color="primary">chat</mat-icon>Chat</button>
-        <button [routerLink]="['a']" mat-menu-item><mat-icon color="primary">admin_panel_settings</mat-icon>Admin</button>
-        <button [routerLink]="['s']" mat-menu-item><mat-icon color="primary">settings</mat-icon>Settings</button>
+      <button [routerLink]="['/']" mat-menu-item><mat-icon color="primary">home</mat-icon>Home</button>
+      <button [routerLink]="['w']" mat-menu-item><mat-icon color="primary">assignment</mat-icon>Work</button>
+      <button [routerLink]="['q']" mat-menu-item><mat-icon color="primary">format_list_numbered</mat-icon>Queue</button>
+      <button [routerLink]="['c']" mat-menu-item><mat-icon color="primary">chat</mat-icon>Chat</button>
+      <button [routerLink]="['a']" mat-menu-item><mat-icon color="primary">admin_panel_settings</mat-icon>Admin</button>
+      <button [routerLink]="['s']" mat-menu-item><mat-icon color="primary">settings</mat-icon>Settings</button>
     </mat-menu>
   </mat-toolbar>

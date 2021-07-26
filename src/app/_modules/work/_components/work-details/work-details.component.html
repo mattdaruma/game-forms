@@ -1,2 +1,23 @@
-<p>work-details works!</p>
-<p>{{(work | async)?.id}}</p>
+<!-- <form class="flex-column-container" [formGroup]="gameForm" *ngIf="gameForm">
+    <mat-paginator
+    #paginator
+    [length]="fieldData?.length"
+    [pageSize]="pageSize | async"
+    [pageSizeOptions]="(pageSizeOptions | async)!"
+    [showFirstLastButtons]="true"
+    (page)="pageChange($event)"
+    ></mat-paginator>
+    <h2>{{formData.name}}</h2>
+    <div *ngFor="let field of pagedFields" class="field-div">
+        <app-form-field
+            [fieldData]="field"
+            [valueData]="workData.workData[formData.fieldIds.indexOf(field.id)]"
+            [listData]="workData.listData[formData.fieldIds.indexOf(field.id)]"
+            [myControl]="getControl(field.id)"
+        >
+        </app-form-field>
+    </div>
+    <button (click)="completeWork()" [disabled]="!gameForm.valid" mat-button color="primary">
+        Complete
+    </button>
+</form> -->

@@ -1,16 +1,7 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
 import { HomeComponent } from './_components/home/home.component';
 
-// @Component({
-//   selector: 'app-test',
-//   template: '<h1>hello world</h1>'
-// })
-// export class testComponent  {
-//   constructor(){
-//   }
-// }
 const routes: Routes = [
   {path: 'admin', loadChildren: () => import('./_modules/admin/admin.module').then(m => m.AdminModule)},
   {path: 'a', loadChildren: () => import('./_modules/admin/admin.module').then(m => m.AdminModule)},

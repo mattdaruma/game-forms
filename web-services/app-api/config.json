@@ -1,8 +1,0 @@
-{
-    "jwtHeader": "game-forms-jwt",
-    "jwtSecret": "itsasecretokay?",
-    "appRoles": ["ADMIN", "MANAGER", "LABORER"],
-    "roleMap": {
-        "my-app-manager": ["ADMIN","MANAGER","LABORER"]
-    }
-}
